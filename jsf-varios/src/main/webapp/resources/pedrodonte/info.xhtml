@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:cc="http://java.sun.com/jsf/composite"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+<cc:interface></cc:interface>
+
+<cc:implementation>
+	<ul>
+		<li>Requesting host: #{request.remoteHost}</li>
+		<li>Requesting client type:<br /> #{header["User-Agent"]}
+		</li>
+		<li>Locale: #{view.locale}</li>
+		<li>Session id: #{session.id}</li>
+	</ul>
+</cc:implementation>
+</html>

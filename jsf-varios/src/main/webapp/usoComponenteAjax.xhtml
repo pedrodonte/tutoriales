@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:pedrodonte="http://java.sun.com/jsf/composite/pedrodonte">
+
+<h:head>
+	<meta charset="UTF-8" />
+</h:head>
+
+<h:body>
+	<h1>JSF-Ajax Component</h1>
+
+	<h:form id="form1">
+		<pedrodonte:ajaxCommandButton value="AJAX Update" render=":form1:out"
+			listener="#{indexBean.update(event)}" />
+		<br />
+		<h:outputText id="out" value="AJAX Submissions: #{indexBean.count}" />
+		
+		<br/>
+		<h:commandLink value="Volver" action="index" />
+	</h:form>
+
+</h:body>
+
+</html>

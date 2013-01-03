@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:cc="http://java.sun.com/jsf/composite"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+<cc:interface componentType="UsuarioComponenteMantenedor" >
+	<cc:attribute name="visible" />
+	
+	<cc:attribute name="registro" type="ejemplos.mantenedor.Usuario" />
+
+	<cc:attribute name="actCancelar" targets="btncancel" required="true"
+		method-signature="void f1(javax.faces.event.ActionEvent)" />
+		
+	<cc:attribute name="actGuardar" targets="btnsave" required="true"
+		method-signature="void f2(javax.faces.event.ActionEvent)" />
+		
+</cc:interface>
+
+<cc:implementation>
+	<h:panelGrid columns="2" rendered="#{cc.attrs.visible == true}">
+		<f:facet name="header">Registro</f:facet>
+
+		<h:outputText value="Nombre" />
+		<h:inputText id="nombre" value="#{cc.attrs.registro.nombre}" />
+
+		<h:outputText value="Correo" />
+		<h:inputText id="correo" value="#{cc.attrs.registro.correo}" />
+
+		<f:facet name="footer">
+			<h:commandButton id="btncancel" value="Cancelar" actionListener="#{cc.attrs.actCancelar}"/>
+			<h:commandButton id="btnsave"   value="Guardar"  actionListener="#{cc.attrs.actGuardar}"/>
+		</f:facet>
+	</h:panelGrid>
+</cc:implementation>
+</html>
